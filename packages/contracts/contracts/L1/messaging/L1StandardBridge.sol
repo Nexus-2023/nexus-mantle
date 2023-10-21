@@ -12,6 +12,7 @@ import { CrossDomainEnabled } from "../../libraries/bridge/CrossDomainEnabled.so
 import { Lib_PredeployAddresses } from "../../libraries/constants/Lib_PredeployAddresses.sol";
 import { Address } from "@openzeppelin/contracts/utils/Address.sol";
 import { SafeERC20 } from "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
+import {NexusBridge} from "../nexus/NexusBridge.sol";
 
 /**
  * @title L1StandardBridge
@@ -20,7 +21,7 @@ import { SafeERC20 } from "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.s
  * and listening to it for newly finalized withdrawals.
  *
  */
-contract L1StandardBridge is IL1StandardBridge, CrossDomainEnabled {
+contract L1StandardBridge is IL1StandardBridge, CrossDomainEnabled, NexusBridge {
     using SafeERC20 for IERC20;
 
     /********************************
